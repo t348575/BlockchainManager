@@ -1,0 +1,18 @@
+.modal-fullscreen {
+  .modal-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+ngx-datatable {
+  margin-top: 0.5em;
+}
+.vertical-text {
+  display: flex;
+  align-content: center;
+  align-items: center;
+}

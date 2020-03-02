@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Preferences</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="2">
+        Port
+      </ion-col>
+      <ion-col size="10">
+        <ion-item>
+          <ion-label position="floating">Port</ion-label>
+          <ion-input autofocus type="number" [(ngModel)]="port"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="2">
+        Address
+      </ion-col>
+      <ion-col size="10">
+        <ion-item>
+          <ion-label position="floating">Address</ion-label>
+          <ion-input autofocus type="text" [(ngModel)]="address"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="2">
+        Timeout
+      </ion-col>
+      <ion-col size="10">
+        <ion-item>
+          <ion-label position="floating">Timeout</ion-label>
+          <ion-input autofocus type="number" [(ngModel)]="timeout"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center" *ngIf="autoNodeSearch">
+      <ion-col size="2">
+        Search interval
+      </ion-col>
+      <ion-col size="10">
+        <ion-item>
+          <ion-label position="floating">Search interval</ion-label>
+          <ion-input autofocus type="number" [(ngModel)]="searchInterval"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="12">
+        <ion-item>
+          <ion-label>Auto node search</ion-label>
+          <ion-select [value]="true" [(ngModel)]="autoNodeSearch" okText="Okay" cancelText="Dismiss">
+            <ion-select-option [value]="true">Yes</ion-select-option>
+            <ion-select-option [value]="false">No</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="12">
+        <ion-item>
+          <ion-label>Auto refresh nodes</ion-label>
+          <ion-select [value]="true" [(ngModel)]="autoRefreshNodes" okText="Okay" cancelText="Dismiss">
+            <ion-select-option [value]="true">Yes</ion-select-option>
+            <ion-select-option [value]="false">No</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" class="ion-text-center">
+        <ion-button (click)="updateSettings()" [disabled]="!canSave"><ion-icon name="save-outline" slot="start"></ion-icon>Save Settings</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

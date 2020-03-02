@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Manage Chain</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div *ngIf="!localServerReady">
+    <ion-toolbar>
+      <ion-item>
+        Waiting for search peer server to close...
+      </ion-item>
+    </ion-toolbar>
+  </div>
+  <div *ngIf="localServerReady">
+    <ion-toolbar>
+      Enter data to add to the chain:
+    </ion-toolbar>
+    <ion-item>
+      <ion-label position="floating">Data</ion-label>
+      <ion-input type="text" [(ngModel)]="data"></ion-input>
+    </ion-item>
+    <ion-grid *ngIf="chain.length === 0">
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Difficulty</ion-label>
+            <ion-input type="number" [(ngModel)]="difficulty"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Previous hash</ion-label>
+            <ion-input type="text" [(ngModel)]="prevhash"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6" offset="3">
+          <ion-toolbar>
+            <ion-button (click)="addBlockToChain()"><ion-icon name="add-outline" slot="start"></ion-icon>Add to chain</ion-button>
+            <ion-button (click)="verifyChain()" *ngIf="chain.length > 0"><ion-icon name="barcode-outline" slot="start"></ion-icon>Verify chain</ion-button>
+          </ion-toolbar>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-list *ngFor="let block of chain">
+      <ion-button (click)="viewBlockDetails(block)">
+        <ion-item>
+          Index: {{getBlock(block).index}}&nbsp;Hash: {{getBlock(block).hash}}
+        </ion-item>
+      </ion-button>
+    </ion-list>
+  </div>
+</ion-content>

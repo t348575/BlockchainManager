@@ -1,0 +1,14 @@
+<ion-card *ngIf="data.view">
+  <ion-icon name="checkmark-circle-outline"></ion-icon>
+  <ion-card-header>
+    <ion-card-title>
+      Done!
+    </ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    All set! Please visit the preferences tab to verify all settings before deploying.
+  </ion-card-content>
+  <ion-toolbar class="ion-text-right">
+    <ion-button (click)="finish()">Finish</ion-button>
+  </ion-toolbar>
+</ion-card>

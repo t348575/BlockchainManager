@@ -1,0 +1,42 @@
+<ion-header class="ion-padding">
+  <ion-toolbar>
+    <ion-title>Find nodes</ion-title>
+    <ion-button slot="end" color="danger" shape="round" (click)="dismiss()"><ion-icon name="close-outline" slot="icon-only"></ion-icon></ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="ready">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="9">
+          <ion-item>
+            <ion-label position="floating">Search time</ion-label>
+            <ion-input type="number" [(ngModel)]="timeout"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="3" class="ion-text-center">
+          <ion-button (click)="findNodes()"><ion-icon name="search-outline" slot="start"></ion-icon>Search</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-item>
+      <ion-label>
+        {{displayMessage}}
+      </ion-label>
+    </ion-item>
+    <ion-list *ngFor="let node of nodes">
+      <ion-item>
+        <ion-label>ID: {{node.name}} &nbsp;IP: {{node.ip}}</ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-toolbar class="ion-text-right ion-padding" *ngIf="nodes.length > 0">
+      <ion-button (click)="saveNodesToFile()"><ion-icon name="save-outline" slot="start"></ion-icon>Save new nodes</ion-button>
+    </ion-toolbar>
+  </div>
+  <ion-item *ngIf="!ready">
+    <ion-label>
+      Waiting for port to free... This page will close now.
+    </ion-label>
+  </ion-item>
+</ion-content>

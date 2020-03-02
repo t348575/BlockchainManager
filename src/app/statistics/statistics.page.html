@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Statistics</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <highcharts-chart [Highcharts]="HighchartsTCP"
+                    [options]="chartOptionsTCP"
+                    [constructorType]="chartConstructorTCP"
+                    [callbackFunction]="chartCallbackTCP"
+                    [(update)]="updateFlagTCP"
+                    [oneToOne]="true">
+  </highcharts-chart>
+  <highcharts-chart [Highcharts]="HighchartsHTTP"
+                    [options]="chartOptionsHTTP"
+                    [constructorType]="chartConstructorHTTP"
+                    [callbackFunction]="chartCallbackHTTP"
+                    [(update)]="updateFlagHTTP"
+                    [oneToOne]="true">
+  </highcharts-chart>
+</ion-content>

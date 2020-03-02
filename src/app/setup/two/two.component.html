@@ -1,0 +1,32 @@
+<ion-card *ngIf="data.view">
+  <ion-card-header color="dark">
+    <ion-card-title>
+      Security key
+    </ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-toolbar>
+      Enter a security key for nodes to exchange during transactions and communication
+    </ion-toolbar>
+    <ion-item>
+      <ion-label position="floating">Key</ion-label>
+      <ion-input autofocus type="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+  </ion-card-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" class="ion-text-left">
+        <ion-button (click)="previous()">
+          <ion-icon slot="start" name="arrow-back-outline"></ion-icon>
+          Previous
+        </ion-button>
+      </ion-col>
+      <ion-col size="6" class="ion-text-right">
+        <ion-button (click)="next()">
+          Next
+          <ion-icon name="arrow-forward-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-card>

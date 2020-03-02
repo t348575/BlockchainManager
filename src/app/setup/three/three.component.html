@@ -1,0 +1,48 @@
+<ion-card *ngIf="data.view">
+  <ion-card-header color="dark">
+    <ion-card-title>
+      Port's & Address's
+    </ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-toolbar>
+      Enter a port for the application to use. The TCP server communicates on this port. The HTTP server uses port + 1, and the Multicast happens on port - 1
+    </ion-toolbar>
+    <ion-item>
+      <ion-label position="floating">Port</ion-label>
+      <ion-input [(ngModel)]="port" autofocus type="number" min="1" max="65534"></ion-input>
+    </ion-item>
+    <ion-item>
+      TCP Port: {{getPort()}}
+    </ion-item>
+    <ion-item>
+      HTTP Port: {{getPort() === '-' ? '-' : getPortAsInt() + 1}}
+    </ion-item>
+    <ion-item>
+      Multicast Port: {{getPort() === '-' ? '-' : getPortAsInt() - 1}}
+    </ion-item>
+    <ion-toolbar>
+      Enter the Multicast address to use
+    </ion-toolbar>
+    <ion-item>
+      <ion-label position="floating">Address</ion-label>
+      <ion-input [(ngModel)]="address" autofocus type="text"></ion-input>
+    </ion-item>
+  </ion-card-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" class="ion-text-left">
+        <ion-button (click)="previous()">
+          <ion-icon slot="start" name="arrow-back-outline"></ion-icon>
+          Previous
+        </ion-button>
+      </ion-col>
+      <ion-col size="6" class="ion-text-right">
+        <ion-button (click)="next()">
+          Next
+          <ion-icon name="arrow-forward-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-card>
