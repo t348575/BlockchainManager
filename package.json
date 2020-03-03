@@ -1,8 +1,8 @@
 {
   "name": "blockchain_manager",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "author": "t348575",
+  "homepage": "https://github.com/t348575",
   "main": "electron-starter.js",
   "scripts": {
     "ng": "ng",
@@ -17,22 +17,11 @@
     "electron-serve": "ionic build && electron .",
     "app-mac-release": "ionic build browser && electron-packager . --overwrite --platform=darwin --arch=x64 --icon=src/assets/icon/icon.png --prune=true --out=release-builds --extra-resource=./blockchain.exe",
     "app-windows-release": "ionic build browser && electron-packager . Blockchain-Manager --overwrite --asar --platform=win32 --arch=ia32 --icon=src/assets/icon/icon.png --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName='Blockchain Manager' --extra-resource=./blockchain.exe",
-    "app-linux-release": "ionic build browser && electron-packager . electron-tutorial-app --overwrite --asar --platform=linux --arch=x64 --icon=src/assets/icon/icon.png --prune=true --out=release-builds --extra-resource=./blockchain.exe",
+    "app-linux-release": "electron-packager . blockchain-manager --overwrite --asar --platform=linux --arch=x64 --icon=src/assets/icon/icon.png --prune=true --out=release-builds --extra-resource=./blockchain",
     "windows-release": "electron-packager . blockchain-manager --asar --overwrite --platform=win32 --arch=ia32 --icon=src/assets/icon/icon.png --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName='Blockchain Manager' --extra-resource=./blockchain.exe",
     "create-exe": "node build.js",
-    "build-all": "npm run app-0windows-release && npm run create-exe"
-  },
-  "build": {
-    "extraResources": [
-      {
-        "from": "./extraResources/",
-        "to": "extraResources",
-        "filter": [
-          "**/*"
-        ]
-      }
-    ]
-  },
+    "build-all": "npm run app-windows-release && npm run create-exe"
+  },  
   "private": true,
   "dependencies": {
     "@angular/common": "~8.2.14",
@@ -84,5 +73,10 @@
     "tslint": "~5.15.0",
     "typescript": "~3.4.3"
   },
-  "description": "An Ionic project"
+  "description": "A Blockchain manager, to create, add nodes and contribute towards a blockchain",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/t348575/BlockchainManager"
+  }
 }
