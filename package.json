@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "author": "t348575",
   "homepage": "https://github.com/t348575",
-  "main": "electron-starter.js",
+  "main": "src/electron-starter.js",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
