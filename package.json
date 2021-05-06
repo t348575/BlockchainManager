@@ -39,7 +39,7 @@
     "core-js": "^2.5.4",
     "electron-squirrel-startup": "^1.0.0",
     "find-peers": "^1.0.1003",
-    "highcharts": "^8.0.0",
+    "highcharts": "^9.0.0",
     "highcharts-angular": "^2.4.0",
     "ip": "^1.1.5",
     "ngx-electron": "^2.2.0",
