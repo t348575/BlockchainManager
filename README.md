@@ -1,5 +1,5 @@
-# BlockchainManager
-![Visits](https://nkvnu62257.execute-api.ap-south-1.amazonaws.com/production?repo=BlockchainManager)
+# BlockchainManager ![Visits](https://nkvnu62257.execute-api.ap-south-1.amazonaws.com/production?repo=BlockchainManager)
+
    A simple electron app to create a blockchain, and to add nodes to contribute towards the blockchain. The hashing algorithm used is SHA-256.
 
 ## [Releases](https://github.com/t348575/BlockchainManager/releases)
